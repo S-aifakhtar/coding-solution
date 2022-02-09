@@ -1,0 +1,39 @@
+class Solution{
+    public:
+    bool isPrime(int number)
+    {
+        if(number<2)
+        return false;
+        for(int i=2;i*i<=number;i++)
+        {
+            if(number%i==0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+	int digitPrime(int N){
+	    //code here
+	    while(N>0)
+	    {
+	        int val=N;
+	        int sum=0;
+	        while(val>0)
+	        {
+	            int brk=val%10;
+	            sum+=brk;
+	            val=val/10;
+	        }
+	        N=sum;
+	        if(sum-9<=0) break;
+	    }
+	    if(isPrime(N))
+	    {
+	        return true;
+	    }
+	    return false;
+	    
+	    
+	}
+};
